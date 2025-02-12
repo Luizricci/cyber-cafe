@@ -1,0 +1,25 @@
+{
+  "name": "cybercafe",
+  "version": "1.0.0",
+  "description": "atividade de cafeteria para a aula do dia 11/02",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "senai",
+    "node",
+    "Back-end",
+    "café"
+  ],
+  "author": "Luiz Henrique Ricci Aureliano",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.0.5"
+  }
+}
