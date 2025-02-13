@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "413d95fe-91a4-4677-9971-4e470991aa1a",
+		"name": "Cyber Café",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37231882"
+	},
+	"item": [
+		{
+			"name": "getMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/menu"
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 2,\r\n    \"item\": \"coca cola\",\r\n    \"price\": 5.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/order"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPedidoById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/order/25c06ccf-8135-4aa5-9bb9-abcb04042885"
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/order/e15af4e3-6ae7-4213-adb9-b1abcd88143f"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPedidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/order/"
+			},
+			"response": []
+		}
+	]
+}
