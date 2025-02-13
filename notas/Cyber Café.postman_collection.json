@@ -38,7 +38,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3000/api/order/25c06ccf-8135-4aa5-9bb9-abcb04042885"
+				"url": "http://localhost:3000/api/order/1b6e76e6-5784-44a6-a7ec-f2c717c3b1cc"
 			},
 			"response": []
 		},
@@ -47,7 +47,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "http://localhost:3000/api/order/e15af4e3-6ae7-4213-adb9-b1abcd88143f"
+				"url": "http://localhost:3000/api/order/1b6e76e6-5784-44a6-a7ec-f2c717c3b1cc"
 			},
 			"response": []
 		},
@@ -56,7 +56,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3000/api/order/"
+				"url": "http://localhost:3000/api/order"
 			},
 			"response": []
 		}
