@@ -1,5 +1,6 @@
 const OrderList = require("../models/orderList");
 const Order = require("../models/order");
+const e = require("express");
 
 const pedido = new OrderList();
 
@@ -32,18 +33,25 @@ const router = {
         try {
             const {id} = req.params;
             const order = pedido.getOrderById(id);
-            return res.status(200).json(order);
+            return res.status(200).json({status: order.status}); // aqui eu estou indicando que eu quero que ele retorne apenas o item status do array order 
         } catch (error) {
             res.status(400).json({ message: "Erro ao buscar pedido", error });
         }
     },
     deleteOrder: (req, res) => {
         try {
-            
-            pedido.deleteOrder(req.params.id);
-            res.status(200).json({ message: "Pedido deletado com sucesso"});
+            const { id } = req.params;
+            const order = pedido.getOrderById(id);
+            if (!order) {
+                return res.status(404).json({ message: "Pedido não encontrado" });
+            }
+            if (order.status !== "Pendente") {
+                return res.status(403).json({ message: "Não é possível deletar um pedido que já está em preparo ou pronto" });
+            }
+            pedido.deleteOrder(id);
+            return res.status(200).json({ message: "Pedido cancelado com sucesso" });
         } catch (error) {
-            res.status(404).json({ message: "Erro ao deletar pedido", error });
+            return res.status(400).json({ message: "Erro ao cancelar pedido", error });
         }
     }
 }
