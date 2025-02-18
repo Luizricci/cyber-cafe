@@ -26,7 +26,7 @@ const router = {
             const orders = pedido.getAllOrders();
             return res.status(200).json(orders);
         } catch (error) {
-            res.status(400).json({ message: "Erro ao buscar pedidos", error });
+            res.status(404).json({ message: "Erro ao buscar pedidos", error });
         }
     },
     getOrderById: (req, res) => {
@@ -35,7 +35,7 @@ const router = {
             const order = pedido.getOrderById(id);
             return res.status(200).json({status: order.status}); // aqui eu estou indicando que eu quero que ele retorne apenas o item status do array order 
         } catch (error) {
-            res.status(400).json({ message: "Erro ao buscar pedido", error });
+            res.status(404).json({ message: "Erro ao buscar pedido", error });
         }
     },
     deleteOrder: (req, res) => {
